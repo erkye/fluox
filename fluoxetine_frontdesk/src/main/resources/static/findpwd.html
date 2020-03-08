@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>找回密码</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<!-- Facebook and Twitter integration -->
+<meta property="og:title" content=""/>
+<meta property="og:image" content=""/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content=""/>
+<meta property="og:description" content=""/>
+<meta name="twitter:title" content="" />
+<meta name="twitter:image" content="" />
+<meta name="twitter:url" content="" />
+<meta name="twitter:card" content="" />
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="css/animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="css/icomoon.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<!-- Flexslider  -->
+<link rel="stylesheet" href="css/flexslider.css">
+
+<!-- Theme style  -->
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/add.css">
+
+<!-- Modernizr JS -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<body ng-app="fluoxetine" ng-controller="findpasswordController">
+
+<div class="fh5co-loader"></div>
+
+<div id="page">
+
+    <!--顶栏-->
+
+    <nav class="fh5co-nav" role="navigation">
+        <div class="container-wrap">
+            <div class="top-menu">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="fh5co-logo"><a href="index.html">Fluoxetine</a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1">
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="login.html">登录</a></li>
+                            <li class="has-dropdown">
+                                <a href="talking.html">讨论</a>
+                                <ul class="dropdown dropdown-add">
+                                    <li class="dropdown-add"><a href="talking.html">广场闲聊</a></li class="dropdown-add">
+                                    <li class="dropdown-add"><a href="talking.html">请求支援</a></li class="dropdown-add">
+                                    <li class="dropdown-add"><a href="contact.html">联系我们</a></li class="dropdown-add">
+                                </ul>
+                            </li>
+                            <!--<li class="has-dropdown">
+                                <a href="#">需要帮助</a>
+                                <ul class="dropdown">
+                                    <li class="dropdown-add"><a href="#">聊天解闷</a></li>
+                                    <li class="dropdown-add"><a href="#">医师聊天</a></li>
+                                </ul>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!--登录-->
+    <div class="container-wrap">
+        <div id="fh5co-contact">
+            <div class="row">
+
+                <div class="col-md-6 text-center tot-box" style="text-align: center;">
+                    <div class="tot">
+                        <div class="reminder">
+                            <h2>我又想起密码来了</h2>
+                            <span>快把鼠标悄悄地移到这里来</span>
+                        </div>
+                        <div class="text">
+                            <h2><a href="login.html">点击我进行登录</a></h2>
+                            <span>开始奇妙之旅!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="register" method="POST">
+                    <div class="col-md-6 col-md-push-2 animate-box text-center">
+                        <div class="row">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" ng-model="phone" class="form-control" placeholder="注册的手机号" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3" style="padding-top: 5px;">
+                                    <div class="form-group">
+                                        <input type="text" ng-model="code" class="form-control" placeholder="验证码" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3"  style="padding: 5px;padding-right: 12px;">
+                                    <div class="form-group">
+                                        <button id="codebutton" type="button" ng-click="sendCode()" class="btn btn-danger  btn-primary btn-modify dropdown-toggle btn-findpwd-danger">{{buttontext}}</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="submit" ng-click="findUser()" value="确定" class="btn btn-primary btn-modify">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--
+		相关连接 页脚
+	-->
+
+
+    <div class="container-wrap" style="height: 800px">
+        <iframe  src="foot.html" style="width: 100%;height: 100%;" frameborder="0"
+                 seamless></iframe>
+    </div><!-- END container-wrap -->
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+
+
+<div class="container">
+    <!--<h2>模态框实例</h2>
+    &lt;!&ndash; 按钮：用于打开模态框 &ndash;&gt;
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        打开模态框
+    </button>-->
+
+    <!-- 模态框 输入新密码 -->
+    <div class="modal fade" id="findModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">新的密码</h4>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input ng-model="entity.username" type="text" class="form-control" placeholder="用户名" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="password" ng-model="entity.password" class="form-control" placeholder="新的密码" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="password" ng-model="password" class="form-control" placeholder="确认密码" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateUser()">确认</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 模态框 异常提示-->
+    <div class="modal fade" id="tipModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">来自FLUOXETINE的温馨提示</h4>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <div>{{message}}</div>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!--angular-->
+<script src="plugins/angularjs/angular.min.js"></script>
+
+<!-- jQuery Easing -->
+<script src="js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Flexslider -->
+<script src="js/jquery.flexslider-min.js"></script>
+<!-- Magnific Popup -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<!-- Counters -->
+<script src="js/jquery.countTo.js"></script>
+<!-- Main -->
+<script src="js/main.js"></script>
+
+<script src="js/base.js"></script>
+<script src="js/service/userService.js"></script>
+<script src="js/controller/findpasswordController.js"></script>
+
+<!--弹出模态框-->
+<script type="text/javascript">
+    $(function () {
+        //显示模态框
+        /*$("#findModal").modal('show');
+        $("#tipModal").modal('show');*/
+    });
+
+</script>
+
+</body>
+</html>

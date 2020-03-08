@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fluoxetine</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+
+
+
+    <!--修改模态框 出现的位置-->
+    <style type="text/css">
+        .modal.fade.in{
+            top:90px;
+        }
+    </style>
+
+
+</head>
+
+<body data-type="generalComponents" ng-app="fluoxetine" ng-controller="subjectRecordController" ng-init="findSet()">
+
+
+<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand">
+        <h2>We Are Fluoxetine</h2>
+    </div>
+    <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
+
+    </div>
+
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+    <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+        <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+
+            <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                </a>
+                <ul class="am-dropdown-content">
+                    <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
+                    <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                </ul>
+            </li>
+            <li><a href="###" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
+        </ul>
+    </div>
+</header>
+
+
+
+
+
+
+
+<div class="tpl-page-container tpl-page-header-fixed">
+
+
+    <div class="tpl-left-nav tpl-left-nav-hover">
+        <div class="tpl-left-nav-title">
+            功能列表
+        </div>
+        <div class="tpl-left-nav-list">
+            <ul class="tpl-left-nav-menu">
+                <li class="tpl-left-nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="am-icon-home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list active">
+                        <i class="am-icon-wpforms"></i>
+                        <span>测试题目集</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu" style="display: block">
+                        <li>
+                            <a href="subject-set.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>题目集管理</span>
+                            </a>
+
+                            <a href="subject-question.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>题目内容管理</span>
+                            </a>
+                            <a href="subject-record.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>测试记录</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-asl-interpreting"></i>
+                        <span>帖子管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="note-type.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>分类管理</span>
+                            </a>
+
+                            <a href="note.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>帖子管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-check-square"></i>
+                        <span>网站管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="web-company.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>合作厂商管理</span>
+                            </a>
+
+                            <a href="web-link.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>相关链接管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="user.html" class="nav-link">
+                        <i class="am-icon-user"></i>
+                        <span>用户管理</span>
+                    </a>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="connect-us.html" class="nav-link">
+                        <i class="am-icon-black-tie"></i>
+                        <span>留言</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="tpl-content-wrapper">
+        <div class="tpl-content-page-title">
+            Fluoxetine 测试记录
+        </div>
+        <div class="tpl-portlet-components">
+
+            <div class="tpl-block">
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-md-6">
+                        <div class="am-btn-toolbar">
+                            <div class="am-btn-group am-btn-group-xs">
+                                <button type="button" class="am-btn am-btn-default am-btn-danger" ng-click="delete()"><span class="am-icon-trash-o"></span> 删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-3">
+                        <div class="am-form-group">
+                            <select class="form-control" ng-model="searchEntity.subjectId" ng-options="item.id as item.name for item in questionsetlist">
+                                <option value="">所有测试题目集</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-3">
+                        <div class="am-input-group am-input-group-sm">
+                            <input type="text" class="am-form-field" ng-model="searchEntity.username">
+                            <span class="am-input-group-btn">
+            <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button" ng-click="reLoadList()"></button>
+          </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-12">
+                        <form class="am-form">
+                            <table class="am-table am-table-striped am-table-hover table-main">
+                                <thead>
+                                <tr>
+                                    <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
+                                    <th class="table-id">ID</th>
+                                    <th class="table-title">所属测试集</th>
+                                    <th class="table-title">分数</th>
+                                    <th class="table-title">测试时间</th>
+                                    <th class="table-title">用户名</th>
+                                    <th class="table-set">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="entity in recordslist">
+                                    <td><input type="checkbox" ng-click="updateIdsSelection($event,entity.id)"></td>
+                                    <td>{{entity.id}}</td>
+                                    <td>{{entity.subjectId}}</td>
+                                    <td>{{entity.score}}</td>
+                                    <td>{{entity.time | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                                    <td>{{entity.username}}</td>
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary" ng-click="findOne(entity.id)"><span class="am-icon-yelp"></span> 测试详情</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <hr>
+                            <!-- 分页 -->
+                            <tm-pagination conf="paginationConf"></tm-pagination>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tpl-alert"></div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+<!--页面标配模态框  begin-->
+<div class="container">
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">题目</h4>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <div ng-repeat="pojo in entity.detail">
+                        <div class="row">
+                            <div class="col-md-6">
+                                第{{pojo.id}}题分数
+                            </div>
+                            <div class="col-md-6">
+                                {{pojo.value}}
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+
+
+
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--提示-->
+<div class="container">
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="tipModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">提示</h4>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <span>{{message}}</span>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--页面标配模态框  end-->
+<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!--angularJS-->
+<script src="assets/plugins/angularjs/angular.min.js"></script>
+
+<!--分页组件-->
+<link rel="stylesheet" href="assets/plugins/angularjs/pagination.css">
+<script src="assets/plugins/angularjs/pagination.js"></script>
+
+<script src="assets/js/base_pagination.js"></script>
+<script src="assets/js/service/subjectRecordService.js"></script>
+<script src="assets/js/service/subjectSetService.js"></script>
+<script src="assets/js/controller/baseController.js"></script>
+<script src="assets/js/controller/subjectRecordController.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        //显示修改新增模态框
+        var showModal = function(){
+            $("#myModal").modal("show");
+        };
+
+        //显示提示模态框
+        var showTip = function(){
+            $("#tipModal").modal("show");
+        };
+        $("#add_button").click(function () {
+            showModal();
+        });
+
+
+
+    });
+</script>
+
+
+</body>
+
+</html>

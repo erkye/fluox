@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="css/flexslider.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/add.css">
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <script src="plugins/angularjs/angular.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/service/footerService.js"></script>
+    <script src="js/controller/footerController.js"></script>
+
+</head>
+<body ng-app="fluoxetine" ng-controller="footerController" ng-init="init()">
+
+    <div id="fh5co-footer" role="contentinfo" style="background: white">
+        <div class="row">
+            <div class="col-md-3 fh5co-widget">
+                <h4>关于FLUOXETINE</h4>
+                <p>我们来自天涯海角，但却有着相同的目标：和病魔作斗争</p>
+            </div>
+            <div class="col-md-3 col-md-push-1">
+                <h4>合作厂商</h4>
+                <ul class="fh5co-footer-links">
+                    <li ng-repeat="company in companylist">
+                        <a href="{{company.url}}" target="_blank">{{company.companyname}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-md-push-1">
+                <h4>相关连接</h4>
+                <ul class="fh5co-footer-links">
+                    <li ng-repeat="link in linklist">
+                        <a href="{{link.url}}" target="_blank">{{link.linkname}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h4>联系方式</h4>
+                <ul class="fh5co-footer-links">
+                    <li>山东交通学院, <br> FLUOXETINE团队</li>
+                    <li><a href="tel://12345678998">+86 12345678998</a></li>
+                    <li><a href="mailto:1169945748@qq.com">1169945748@qq.com</a></li>
+                    <li><a target="_blank" href="https://www.cnblogs.com/erkye/">作者</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="row copyright">
+            <div class="col-md-12 text-center">
+                <p>
+                    <small class="block">Copyright &copy; 2020. FLUOXETINE All rights reserved.</small>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

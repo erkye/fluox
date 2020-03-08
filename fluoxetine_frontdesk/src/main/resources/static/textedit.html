@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="css/flexslider.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/add.css">
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- Flexslider -->
+    <script src="js/jquery.flexslider-min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+    <!-- Counters -->
+    <script src="js/jquery.countTo.js"></script>
+    <!-- Main -->
+    <script src="js/main.js"></script>
+
+    <style>
+        .w-e-text-container{
+            height: 800px !important;/*!important是重点，因为原div是行内样式设置的高度300px*/
+        }
+    </style>
+
+
+    <!-- <script type="text/javascript">
+        var E = window.wangEditor
+        var editor = new E('#editor')
+        // 或者 var editor = new E( document.getElementById('editor') )
+        editor.create()
+    </script> -->
+
+</head>
+<body ng-app="fluoxetine" ng-controller="textEditController" ng-init="initPage()">
+
+<div class="fh5co-loader"></div>
+
+<div id="page">
+    <nav class="fh5co-nav" role="navigation">
+        <div class="container-wrap">
+            <div class="top-menu">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="fh5co-logo"><a href="index.html">Fluoxetine</a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1">
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li class="has-dropdown">
+                                <a href="home.html">小窝</a>
+                                <ul class="dropdown">
+                                    <li class="dropdown-add"><a href="home-infor.html">我的信息</a></li>
+                                    <li class="dropdown-add"><a href="home-talk.html">我的讨论</a></li class="dropdown-add">
+                                    <li class="dropdown-add"><a href="home.html">我的测试</a></li class="dropdown-add">
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="talking.html">讨论</a>
+                                <ul class="dropdown dropdown-add">
+                                    <li class="dropdown-add"><a href="talking.html">广场闲聊</a></li class="dropdown-add">
+                                    <li class="dropdown-add"><a href="talking.html">请求支援</a></li class="dropdown-add">
+                                    <li class="dropdown-add"><a href="contact.html">联系我们</a></li class="dropdown-add">
+                                </ul>
+                            </li>
+                            <!--<li class="has-dropdown">
+                                <a href="#">需要帮助</a>
+                                <ul class="dropdown dropdown-add">
+                                    <li class="dropdown-add"><a href="#">聊天解闷</a></li class="dropdown-add">
+                                    <li class="dropdown-add"><a href="#">医师聊天</a></li class="dropdown-add">
+                                </ul>
+                            </li>-->
+                            <li class="active"><a href="index.html">富文本编辑器</a></li class="active">
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+    <div class="container-wrap">
+        <div id="fh5co-contact">
+            <form method="POST">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <select id="choose" class="form-control texteditor-control" ng-model="entity.typeId" ng-options="item.id as item.type for item in typelist">
+                                <option value="">帖子分类</option>
+                            </select>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control texteditor-control" placeholder="标题" ng-model="entity.title">
+                        </div>
+                    </div>
+
+                    <HR style="FILTER:alpha(opacity=100,finishopacity=0,style=3)" width="80%"color=#987cb9 SIZE=3>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control texteditor-control" placeholder="封面图片链接 (http://....)" ng-model="entity.img">
+                        </div>
+                    </div>
+
+
+                    <HR style="FILTER:alpha(opacity=100,finishopacity=0,style=3)" width="80%"color=#987cb9 SIZE=3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <textarea class="form-control texteditor-control" placeholder="简要介绍一下吧~" ng-model="entity.introd"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <textarea id="content" class="texteditor-textarea"></textarea>
+                <div id="editor"></div>
+                <div class="form-group" style="padding-top: 40px;">
+                    <button id="submitbutton" type="submit" class="textarea-submit" ng-click="add()">点击发布</button>
+                </div>
+            </form> 
+        </div>
+
+    </div><!-- END container-wrap -->
+
+    <!--
+            相关连接
+        -->
+
+    <div class="container-wrap" style="height: 800px">
+        <iframe  src="foot.html" style="width: 100%;height: 100%;" frameborder="0"
+                 seamless></iframe>
+    </div><!-- END container-wrap -->
+</div>
+<!-- 模态框 异常提示-->
+<div class="modal fade" id="tipModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title">来自FLUOXETINE的温馨提示</h4>
+            </div>
+
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                <div>{{message}}</div>
+            </div>
+
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+<script type="text/javascript" src="js/wangEditor.min.js"></script>
+<script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#editor')
+    var $text1 = $('#content')
+    editor.customConfig.onchange = function (html) {
+        // 监控变化，同步更新到 textarea
+        $text1.val(html)
+    }
+    editor.create()
+    // 初始化 textarea 的值
+    $text1.val(editor.txt.html())
+</script>
+
+<script src="plugins/angularjs/angular.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/service/noteTypeService.js"></script>
+<script src="js/service/noteService.js"></script>
+<script src="js/controller/textEditController.js"></script>
+
+</body>
+</html>
+

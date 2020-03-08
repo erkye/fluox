@@ -1,0 +1,578 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fluoxetine</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+
+    <!--修改模态框 出现的位置-->
+    <style type="text/css">
+        .modal.fade.in {
+            top: 90px;
+        }
+    </style>
+
+
+</head>
+
+<body data-type="generalComponents" ng-app="fluoxetine" ng-controller="noteController" ng-init="findNoteType()">
+
+
+<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand">
+        <h2>We Are Fluoxetine</h2>
+    </div>
+    <div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
+
+    </div>
+
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+    <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+        <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+
+            <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                </a>
+                <ul class="am-dropdown-content">
+                    <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
+                    <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                </ul>
+            </li>
+            <li><a href="###" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
+        </ul>
+    </div>
+</header>
+
+
+<div class="tpl-page-container tpl-page-header-fixed">
+
+
+    <div class="tpl-left-nav tpl-left-nav-hover">
+        <div class="tpl-left-nav-title">
+            功能列表
+        </div>
+        <div class="tpl-left-nav-list">
+            <ul class="tpl-left-nav-menu">
+                <li class="tpl-left-nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="am-icon-home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>测试题目集</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="subject-set.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>题目集管理</span>
+                            </a>
+
+                            <a href="subject-question.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>题目内容管理</span>
+                            </a>
+                            <a href="subject-record.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>测试记录</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list active">
+                        <i class="am-icon-asl-interpreting"></i>
+                        <span>帖子管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu" style="display: block">
+                        <li>
+                            <a href="note-type.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>分类管理</span>
+                            </a>
+
+                            <a href="note.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>帖子管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-check-square"></i>
+                        <span>网站管理</span>
+                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu">
+                        <li>
+                            <a href="web-company.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>合作厂商管理</span>
+                            </a>
+
+                            <a href="web-link.html">
+                                <i class="am-icon-angle-right"></i>
+                                <span>相关链接管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="user.html" class="nav-link">
+                        <i class="am-icon-user"></i>
+                        <span>用户管理</span>
+                    </a>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="connect-us.html" class="nav-link">
+                        <i class="am-icon-black-tie"></i>
+                        <span>留言</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="tpl-content-wrapper">
+        <div class="tpl-content-page-title">
+            Fluoxetine 帖子管理
+        </div>
+        <div class="tpl-portlet-components">
+
+            <div class="tpl-block">
+                <div class="am-g">
+                    <div class="am-u-sm-12 am-u-md-3">
+                        <div class="am-btn-toolbar">
+                            <div class="am-btn-group am-btn-group-xs">
+                                <button id="back_button" type="button" class="am-btn am-btn-default am-btn-warning">
+                                    <span class="am-icon-lock"></span> 封贴
+                                </button>
+                                <button type="button" class="am-btn am-btn-default am-btn-secondary" ng-click="updateStatus(1)">
+                                    <span class="am-icon-lock"></span> 解封
+                                </button>
+                                <button type="button" class="am-btn am-btn-default am-btn-success" ng-click="updateRecomm(1)"><span
+                                        class="am-icon-hand-o-up"></span> 推荐
+                                </button>
+                                <button type="button" class="am-btn am-btn-default am-btn-primary" ng-click="updateRecomm(0)"><span
+                                        class="am-icon-hand-o-down"></span> 取消推荐
+                                </button>
+                                <button type="button" class="am-btn am-btn-default am-btn-danger" ng-click="updateStatus(0)"><span
+                                        class="am-icon-trash-o"></span> 删除
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-3">
+                        <div class="am-form-group">
+                            <span style="font-size: medium">仅查看推荐帖</span>
+                            <input type="checkbox" ng-model="searchEntity.recomm" ng-true-value="1" ng-false-value="">
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-3">
+                        <div class="am-form-group">
+                            <select class="form-control" ng-model="searchEntity.typeId" ng-options="item.id as item.type for item in typelist">
+                                <option value="">所有类别</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-3">
+                        <div class="am-input-group am-input-group-sm">
+                            <input type="text" class="am-form-field" ng-model="searchEntity.title">
+                            <span class="am-input-group-btn">
+            <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" ng-click="reLoadList()" type="button"></button>
+          </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-12">
+                        <form class="am-form">
+                            <table class="am-table am-table-striped am-table-hover table-main">
+                                <thead>
+                                <tr>
+                                    <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
+                                    <th class="table-id">ID</th>
+                                    <th class="table-title">用户名</th>
+                                    <th class="table-title">标题</th>
+                                    <th class="table-title">所属分类</th>
+                                    <th class="table-title">是否是推荐帖</th>
+                                    <th class="table-title">状态</th>
+                                    <th class="table-title">时间</th>
+                                    <th class="table-set">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="entity in notelist">
+                                    <td><input type="checkbox" ng-click="updateIdsSelection($event,entity.id)"></td>
+                                    <td>{{entity.id}}</td>
+                                    <td>{{entity.username}}</td>
+                                    <td>{{entity.title}}</td>
+                                    <td>{{entity.typeId}}</td>
+                                    <td ng-if="entity.recomm == 1"><span style="color: red">是</span></td>
+                                    <td ng-if="entity.recomm == 0">否</td>
+                                    <td ng-if="entity.status ==1"><span style="color: green">正常</span></td>
+                                    <td ng-if="entity.status ==2"><span style="color: red">封禁</span></td>
+                                    <td ng-if="entity.status ==0"><span style="color: orange">删除</span></td>
+                                    <td>{{entity.time | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                                    <td>
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary" ng-click="findOne(entity.id)"><span
+                                                        class="am-icon-book"></span> 详细内容
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <hr>
+                            <!-- 分页 -->
+                            <tm-pagination conf="paginationConf"></tm-pagination>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tpl-alert"></div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<!--页面标配模态框  begin-->
+<div class="container">
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">题目</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            真的要封掉吗？用户可能会伤心的
+                        </div>
+                    </div>
+                    <br>
+
+
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="updateStatus(2)">封</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">算了</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="detailModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">帖子详情</h4>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                        ID:
+                        </div>
+                        <div class="col-md-8">
+                            {{entity.id}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                        用户名:
+                        </div>
+                        <div class="col-md-8">
+                            {{entity.username}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            发帖时间:
+                        </div>
+                        <div class="col-md-8">
+                            {{entity.time | date:'yyyy-MM-dd HH:mm:ss'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                        标题:
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="entity.title">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                        所属分类:
+                        </div>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="entity.typeId" ng-options="item.id as item.type for item in typelist"></select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            状态:
+                        </div>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="entity.status">
+                                <option value="1">正常</option>
+                                <option value="2">封禁</option>
+                                <option value="0">删除</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                        简介:
+                        </div>
+                        <div class="col-md-8">
+                            <textarea class="form-control" ng-model="entity.introd"></textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                        是否首页推荐:
+                        </div>
+                        <div class="col-md-8">
+                            <input type="checkbox" ng-model="entity.recomm" ng-checked="isRecomm()" ng-true-value="1" ng-fasle-value="0">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                        封面:
+                        </div>
+                        <div class="col-md-8">
+                           <img src="{{entity.img}}" width="350px" height="200px">
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            评论管理:
+                        </div>
+                        <div class="col-md-8">
+                            <button class="form-control btn-danger" ng-click="findTalk(entity.id)">评论管理</button>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                        详细内容↓↓
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                        {{entity.content}}
+                        </div>
+                    </div>
+                    <br>
+
+
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">修改</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--提示-->
+<div class="container">
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="tipModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">提示</h4>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <span>{{message}}</span>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--提示-->
+<div class="container">
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="talkModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">评论管理</h4>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <table class="am-table am-table-striped am-table-hover table-main">
+                        <thead>
+                        <tr>
+                            <th class="table-id">ID</th>
+                            <th class="table-title">用户名</th>
+                            <th class="table-title">评论内容</th>
+                            <th class="table-title">时间</th>
+                            <th class="table-set">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="entity in talklist">
+                            <td>{{entity.id}}</td>
+                            <td>{{entity.username}}</td>
+                            <td>{{entity.content}}</td>
+                            <td>{{entity.time | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                            <td>
+                                <div class="am-btn-toolbar">
+                                    <div class="am-btn-group am-btn-group-xs">
+                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary" ng-click="deleteTalk(entity.id)"><span
+                                                class="am-icon-remove"></span> 删除
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--页面标配模态框  end-->
+<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+<!--angularJS-->
+<script src="assets/plugins/angularjs/angular.min.js"></script>
+
+<!--分页组件-->
+<link rel="stylesheet" href="assets/plugins/angularjs/pagination.css">
+<script src="assets/plugins/angularjs/pagination.js"></script>
+
+<script src="assets/js/base_pagination.js"></script>
+<script src="assets/js/service/noteService.js"></script>
+<script src="assets/js/service/noteTypeService.js"></script>
+<script src="assets/js/controller/baseController.js"></script>
+<script src="assets/js/controller/noteController.js"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        //显示修改新增模态框
+        var showModal = function () {
+            $("#myModal").modal("show");
+        };
+
+        //显示提示模态框
+        var showTip = function () {
+            $("#tipModal").modal("show");
+        };
+        $("#back_button").click(function () {
+            showModal();
+        });
+
+
+
+    });
+</script>
+
+
+</body>
+
+</html>

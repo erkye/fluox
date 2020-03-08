@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="css/flexslider.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/add.css">
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- Flexslider -->
+    <script src="js/jquery.flexslider-min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+
+    <!-- Counters -->
+    <script src="js/jquery.countTo.js"></script>
+
+    <!-- Main -->
+    <script src="js/main.js"></script>
+
+
+
+    <script type="text/javascript" src="js/wangEditor.min.js"></script>
+    <!-- <script type="text/javascript">
+        var E = window.wangEditor
+        var editor = new E('#editor')
+        // 或者 var editor = new E( document.getElementById('editor') )
+        editor.create()
+    </script> -->
+    <script type="text/javascript">
+        var E = window.wangEditor;
+        var editor = new E('#editor');
+        var $text1 = $('#content');
+        editor.customConfig.onchange = function (html) {
+            // 监控变化，同步更新到 textarea
+            $text1.val(html);
+        };
+        editor.create();
+        // 初始化 textarea 的值
+        $text1.val(editor.txt.html());
+
+        $(function () {
+            //显示模态框
+            var showTip = function(){
+                $("#tipModal").modal('show');
+            };
+
+        });
+
+    </script>
+    <script src="plugins/angularjs/angular.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/service/subjectService.js"></script>
+    <script src="js/service/subjectRecordService.js"></script>
+    <script src="js/controller/subjectController.js"></script>
+
+
+</head>
+<body ng-app="fluoxetine" ng-controller="subjectController" ng-init=initPage()>
+
+<div class="fh5co-loader"></div>
+
+<div id="page">
+    <nav class="fh5co-nav" role="navigation">
+        <div class="container-wrap">
+            <div class="top-menu">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="fh5co-logo"><a href="index.html">Fluoxetine</a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1">
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li class="has-dropdown">
+                                <a href="home.html">小窝</a>
+                                <ul class="dropdown">
+                                    <li class="dropdown-add"><a href="home-infor.html">我的信息</a></li>
+                                    <li class="dropdown-add"><a href="home-talk.html">我的讨论</a></li class="dropdown-add">
+                                    <li class="dropdown-add"><a href="home.html">我的测试</a></li class="dropdown-add">
+                                </ul>
+                            </li>
+                            <li class="has-dropdown active">
+                                <a href="talking.html">讨论</a>
+                                <ul class="dropdown dropdown-add">
+                                    <li class="dropdown-add"><a href="talking.html">广场闲聊</a></li class="dropdown-add">
+                                    <li class="dropdown-add"><a href="talking.html">请求支援</a></li class="dropdown-add">
+                                    <li class="dropdown-add"><a href="contact.html">联系我们</a></li class="dropdown-add">
+                                </ul>
+                            </li>
+                            <!--<li class="has-dropdown">
+                                <a href="#">需要帮助</a>
+                                <ul class="dropdown dropdown-add">
+                                    <li class="dropdown-add"><a href="#">聊天解闷</a></li class="dropdown-add">
+                                    <li class="dropdown-add"><a href="#">医师聊天</a></li class="dropdown-add">
+                                </ul>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container-wrap">
+        <aside id="fh5co-hero">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li style="background-image: url(images/img_bg_3.jpg);">
+                        <div class="overlay-gradient"></div>
+                        <div class="container-fluids">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 slider-text slider-text-bg">
+                                    <div class="slider-text-inner text-center">
+                                        <h1>国际标准测试题</h1>
+                                        <h2>SDS抑郁自评表，原型是Zung抑郁量表（1965），美国教育卫生部推荐用于精神药理学研究的量表之一。</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div id="fh5co-about">
+            <div class="row animate-box">
+                <div class="col-md-6 col-md-offset-3 text-center heading-section">
+                    <h2>导读</h2>
+                    <p>其特点是使用简便，并能相当直观地反映抑郁患者的主观感受。主要适用于具有抑郁症状的成年人，包括门诊及住院患者。但是对严重迟缓症状的抑郁，评定有困难。同时，SDS对于文化程度较低或智力水平稍差的人使用效果不佳。</p>
+                </div>
+            </div>
+            <HR style="FILTER:alpha(opacity=100,finishopacity=0,style=3)" width="80%"color=#987cb9 SIZE=3>
+
+            <div class="row animate-box">
+                <div class="col-md-6 col-md-offset-3 text-center heading-section">
+                    <h4>根据您最近一周的实际情况，仔细阅读每一条，把意思弄明白再选择</h4>
+                    <h5>从左到右分别表示：</h5>
+                    <h5>1.很少：没有或很少有时间</h5>
+                    <h5>2. 较少：少部分时间</h5>
+                    <h5>3.较多：相当多时间</h5>
+                    <h5>4.经常：绝大部分或全部时间部时间</h5>
+                    <p>本次测试共 20 题</p>
+                </div>
+            </div>
+            <HR style="FILTER:alpha(opacity=100,finishopacity=0,style=3)" width="80%"color=#987cb9 SIZE=3>
+            <div class="row" ng-repeat="question in questionlist">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <div class="text-center">
+                        <h4>{{$index+1}}.{{question.question}}</h4>
+                        <div style="font-size: large;color: #0b0b0b;">
+                            <input style="width: 20px;height: 20px" type="radio" ng-click="updateCheck(question.id,question.optionA)" name="opt{{question.id}}">偶有&nbsp;&nbsp;&nbsp;
+                            <input style="width: 20px;height: 20px" type="radio" ng-click="updateCheck(question.id,question.optionB)" name="opt{{question.id}}">有时&nbsp;&nbsp;&nbsp;
+                            <input style="width: 20px;height: 20px" type="radio" ng-click="updateCheck(question.id,question.optionC)" name="opt{{question.id}}">经常&nbsp;&nbsp;&nbsp;
+                            <input style="width: 20px;height: 20px" type="radio" ng-click="updateCheck(question.id,question.optionD)" name="opt{{question.id}}">持续
+                        </div>
+                    </div>
+                </div>
+                <br><br><br>
+                <HR style="FILTER:alpha(opacity=100,finishopacity=0,style=3)" width="80%"color=#987cb9 SIZE=3>
+            </div>
+
+
+
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <button type="button" ng-click="add()" class="btn btn-info" id="butt">提交测试</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div><!-- END container-wrap -->
+
+    <!--
+		相关连接
+	-->
+
+
+    <div class="container-wrap" style="height: 800px">
+        <iframe  src="foot.html" style="width: 100%;height: 100%;" frameborder="0"
+                 seamless></iframe>
+    </div><!-- END container-wrap -->
+</div>
+
+
+<div class="container">
+    <!-- 模态框 -->
+    <div class="modal fade" id="tipModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">测试结果：</h4>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <h4>{{message}}</h4>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+
+<
+</body>
+</html>
+
